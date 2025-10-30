@@ -1,0 +1,1483 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="prev" title="API Reference" href="index.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
+        <title>dsppy package - dsppy 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">dsppy 0.0.2 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">dsppy 0.0.2 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">dsppy package</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/api/dsppy.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="dsppy-package">
+<h1>dsppy package<a class="headerlink" href="#dsppy-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-dsppy.channel">
+<span id="dsppy-channel-module"></span><h2>dsppy.channel module<a class="headerlink" href="#module-dsppy.channel" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.channel.CRCCoder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.channel.</span></span><span class="sig-name descname"><span class="pre">CRCCoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polgen</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#CRCCoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.CRCCoder" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Construye un codificador/descodificador basado en un código de redundancia
+cíclica</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>p: numpy.array</dt><dd><p>Polinomio generador</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.CRCCoder.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#CRCCoder.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.CRCCoder.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Comprueba una palabra de código y determina si ha habido o no errores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bits</strong> – numpy.array
+Palabra de mensaje</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tupla con un array de numpy con la palabra de mensaje y un valor
+booleano indicando si ha habido o no errores</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.CRCCoder.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#CRCCoder.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.CRCCoder.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Genera una palabra de código. Para ello calcula el CRC corresponediente
+a una palabra de mensaje y se lo añade al final.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bits</strong> – numpy.array
+Palabra de mensaje</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con la palabra de código</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.channel.CRCCoder.p">
+<span class="sig-name descname"><span class="pre">p</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.channel.CRCCoder.p" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.CRCCoder.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#CRCCoder.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.CRCCoder.register" title="Link to this definition">¶</a></dt>
+<dd><p>Función interna. Opera el registro de desplazamiento</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.channel.ConvCoder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.channel.</span></span><span class="sig-name descname"><span class="pre">ConvCoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#ConvCoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.ConvCoder" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Construye un codificador convolucional</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>K: int</dt><dd><p>Longitud de restricción</p>
+</dd>
+<dt>g: numpy.array</dt><dd><p>Vectores generadores (un vector por fila)
+Dimensiones: (n, k*K)</p>
+</dd>
+<dt>k: int</dt><dd><p>Número de bits que son procesados a con cada entrada</p>
+</dd>
+<dt>n: int</dt><dd><p>Número de bits de salida para cada entrada</p>
+</dd>
+<dt>M: int</dt><dd><p>Número de bits de memoria. Equivale a (K-1)*k</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.ConvCoder.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#ConvCoder.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.ConvCoder.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Decodifica una secuencia de código usando el algoritmo de Viterbi</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – numpy.array
+Array 1D con los bits codificados</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array 1D con datos correspondientes a descodificar code</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.ConvCoder.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#ConvCoder.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.ConvCoder.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Codifica un array de datos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – numpy.array
+Array 1D con los bits de datos a codificar</p></li>
+<li><p><strong>ending</strong> – bool
+Añade bits de cola necesarios para volver al estado 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array 1D con los bits codificados</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.ConvCoder.plotStateDiagram">
+<span class="sig-name descname"><span class="pre">plotStateDiagram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#ConvCoder.plotStateDiagram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.ConvCoder.plotStateDiagram" title="Link to this definition">¶</a></dt>
+<dd><p>Dibuja el diagrama de estados del codificador convolucional</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.channel.ConvCoder.plotTrellis">
+<span class="sig-name descname"><span class="pre">plotTrellis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#ConvCoder.plotTrellis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.ConvCoder.plotTrellis" title="Link to this definition">¶</a></dt>
+<dd><p>Dibuja el diagrama de rejilla (Trellis)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> – int
+Número de pasos de tiempo a mostrar</p></li>
+<li><p><strong>path</strong> – list of tuple, opcional (por defecto: None)
+Camino de descodificación que será resaltado</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.channel.canalBSC">
+<span class="sig-prename descclassname"><span class="pre">dsppy.channel.</span></span><span class="sig-name descname"><span class="pre">canalBSC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ber</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/channel.html#canalBSC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.channel.canalBSC" title="Link to this definition">¶</a></dt>
+<dd><p>Simula la transmisión de datos por un canal BSC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bits</strong> – numpy.array
+Array unidimensional con valores ‘0’ o ‘1’ que contiene los datos
+transmitidos por el canal.</p></li>
+<li><p><strong>ber</strong> – float
+Probabilidad de error de bits del canal. Por ejemplo, un valor de
+0.05 equivale a un BER del 5%</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con los datos de ‘bits’ tras la transmisión por el canal</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-dsppy.code">
+<span id="dsppy-code-module"></span><h2>dsppy.code module<a class="headerlink" href="#module-dsppy.code" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.code.FixedLengthCoder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.code.</span></span><span class="sig-name descname"><span class="pre">FixedLengthCoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#FixedLengthCoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.FixedLengthCoder" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Construye un codificador de palabras de longitud fija</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>b: int</dt><dd><p>Número de bits de cada palabra. Debe ser un entero positivo (&gt;=0)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.FixedLengthCoder.b">
+<span class="sig-name descname"><span class="pre">b</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dsppy.code.FixedLengthCoder.b" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.code.FixedLengthCoder.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#FixedLengthCoder.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.FixedLengthCoder.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Descodifica un mensaje</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – numpy.array
+Array de numpy con 0s y 1s (secuencia de bits).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con el mensaje codificado en ‘code’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.code.FixedLengthCoder.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#FixedLengthCoder.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.FixedLengthCoder.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Codifica un mensaje</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con el mensaje a codificar. Sus elementos deben
+ser números enteros mayores o iguales a 0 y menores a 2**b</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con la cadena de bits correspondiente a la
+codificacióin de ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.code.</span></span><span class="sig-name descname"><span class="pre">RunCountCoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#RunCountCoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.RunCountCoder" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.b">
+<span class="sig-name descname"><span class="pre">b</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#dsppy.code.RunCountCoder.b" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.bCount">
+<span class="sig-name descname"><span class="pre">bCount</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#dsppy.code.RunCountCoder.bCount" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dsppy.code.RunCountCoder.count" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#RunCountCoder.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.RunCountCoder.decode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/code.html#RunCountCoder.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.code.RunCountCoder.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Codifica un mensaje</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con el mensaje a codificar. Sus elementos deben
+ser números enteros mayores o iguales a 0 y menores a 2**b</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con la cadena de bits correspondiente a la
+codificacióin de ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.maxZeros">
+<span class="sig-name descname"><span class="pre">maxZeros</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#dsppy.code.RunCountCoder.maxZeros" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.code.RunCountCoder.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#dsppy.code.RunCountCoder.value" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dsppy.quantize">
+<span id="dsppy-quantize-module"></span><h2>dsppy.quantize module<a class="headerlink" href="#module-dsppy.quantize" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.ALawSQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">ALawSQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">87.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'midrise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#ALawSQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.ALawSQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dsppy.quantize.CompandedSQ" title="dsppy.quantize.CompandedSQ"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompandedSQ</span></code></a></p>
+<p>Construye un cuantificador escalar con un esquema comprimido basado en la
+ley A</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>q: float</dt><dd><p>Tamaño del cuanto del cuantificador escalar uniforme subyacente</p>
+</dd>
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación del
+cuantificador escalar uniforme subyacente</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.ALawSQ.compress">
+<span class="sig-name descname"><span class="pre">compress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#ALawSQ.compress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.ALawSQ.compress" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza la compresión de la señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal comprimidas</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.ALawSQ.expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#ALawSQ.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.ALawSQ.expand" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza la expansión de la señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal expandidas</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.CompandedSQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">CompandedSQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressFcn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expandFcn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'midrise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#CompandedSQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.CompandedSQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dsppy.quantize.UniformSQ" title="dsppy.quantize.UniformSQ"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniformSQ</span></code></a></p>
+<p>Construye un cuantificador escalar con un esquema comprimido/logaritmico</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>q: float</dt><dd><p>Tamaño del cuanto del cuantificador escalar uniforme subyacente</p>
+</dd>
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación del
+cuantificador escalar uniforme subyacente</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.CompandedSQ.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#CompandedSQ.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.CompandedSQ.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del descodificador (segunda parte de la
+cuantificación).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – numpy.array
+Array de numpy con las muestras de la señal codificadas</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras cuantificadas de la señal
+codificada en ‘code’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.CompandedSQ.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#CompandedSQ.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.CompandedSQ.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del codificador (primera parte de la cuantificación)
+correspondiente a ‘data’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con el código correspondiente a ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalSQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">OptimalSQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kmeans'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalSQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalSQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dsppy.quantize.OptimalVQ" title="dsppy.quantize.OptimalVQ"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimalVQ</span></code></a></p>
+<p>Construye un cuantificador escalar optimizado a la PDF de la señal y
+basado en el algoritmo de Lloyd-Max</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalSQ.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalSQ.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalSQ.plot" title="Link to this definition">¶</a></dt>
+<dd><p>Representa la entrada frente a la salida del cuantificador</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ax</strong> – Axes, opcional (por defecto: None)
+Ejes cartesianos en los que se representará el cuantificador.
+Si es None, se crearán unos nuevos ejes en una nueva figura.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalSQ.quantize">
+<span class="sig-name descname"><span class="pre">quantize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalSQ.quantize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalSQ.quantize" title="Link to this definition">¶</a></dt>
+<dd><p>Cuantifica una señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal cuantificadas. Tendrá
+las mismas dimensiones que ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalVQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">OptimalVQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kmeans'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalVQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalVQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Construye un cuantificador vectorial optimizado a la PDF de la señal y
+basado en el algoritmo de Lloyd-Max</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalVQ.C">
+<span class="sig-name descname"><span class="pre">C</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.quantize.OptimalVQ.C" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalVQ.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalVQ.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalVQ.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del descodificador (segunda parte de la
+cuantificación).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – numpy.array
+Array de numpy con las muestras de la señal codificadas</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras cuantificadas de la señal
+codificada en ‘code’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalVQ.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalVQ.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalVQ.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del codificador (primera parte de la cuantificación)
+correspondiente a ‘data’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con el código correspondiente a ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.OptimalVQ.quantize">
+<span class="sig-name descname"><span class="pre">quantize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#OptimalVQ.quantize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.OptimalVQ.quantize" title="Link to this definition">¶</a></dt>
+<dd><p>Cuantifica una señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy de 2 dimensiones con las muestras de la señal.
+La primera dimensión indica el número de bloques (vectores que
+serán cuantificados como un solo objeto por el cuantificador
+vectorial) y la segunda dimensión es el tamaño del bloque (N).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal cuantificadas. Tendrá
+las mismas dimensiones que ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">UniformSQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'midrise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#UniformSQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.UniformSQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Construye un cuantificador escalar uniforme</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>q: float</dt><dd><p>Tamaño del cuanto</p>
+</dd>
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.C">
+<span class="sig-name descname"><span class="pre">C</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.quantize.UniformSQ.C" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.L">
+<span class="sig-name descname"><span class="pre">L</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.quantize.UniformSQ.L" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.decode">
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#UniformSQ.decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.UniformSQ.decode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del descodificador (segunda parte de la
+cuantificación).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>code</strong> – numpy.array
+Array de numpy con las muestras de la señal codificadas</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras cuantificadas de la señal
+codificada en ‘code’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.encode">
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#UniformSQ.encode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.UniformSQ.encode" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza el mapeo del codificador (primera parte de la cuantificación)
+correspondiente a ‘data’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con el código correspondiente a ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#UniformSQ.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.UniformSQ.plot" title="Link to this definition">¶</a></dt>
+<dd><p>Representa la entrada frente a la salida del cuantificador</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ax</strong> – Axes, opcional (por defecto: None)
+Ejes cartesianos en los que se representará el cuantificador.
+Si es None, se crearán unos nuevos ejes en una nueva figura.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.precision">
+<span class="sig-name descname"><span class="pre">precision</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.quantize.UniformSQ.precision" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.q">
+<span class="sig-name descname"><span class="pre">q</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#dsppy.quantize.UniformSQ.q" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.quantize">
+<span class="sig-name descname"><span class="pre">quantize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#UniformSQ.quantize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.UniformSQ.quantize" title="Link to this definition">¶</a></dt>
+<dd><p>Cuantifica una señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal cuantificadas. Tendrá
+las mismas dimensiones que ‘data’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.UniformSQ.roundData">
+<span class="sig-name descname"><span class="pre">roundData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dsppy.quantize.UniformSQ.roundData" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dsppy.quantize.muLawSQ">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dsppy.quantize.</span></span><span class="sig-name descname"><span class="pre">muLawSQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'midrise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#muLawSQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.muLawSQ" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dsppy.quantize.CompandedSQ" title="dsppy.quantize.CompandedSQ"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompandedSQ</span></code></a></p>
+<p>Construye un cuantificador escalar con un esquema comprimido basado en la
+ley Mu</p>
+<dl class="simple">
+<dt>Atributos:</dt><dd><dl class="simple">
+<dt>q: float</dt><dd><p>Tamaño del cuanto del cuantificador escalar uniforme subyacente</p>
+</dd>
+<dt>C: numpy.array</dt><dd><p>Array de numpy con todos los niveles de cuantificación del
+cuantificador escalar uniforme subyacente</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.muLawSQ.compress">
+<span class="sig-name descname"><span class="pre">compress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#muLawSQ.compress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.muLawSQ.compress" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza la compresión de la señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal comprimidas</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dsppy.quantize.muLawSQ.expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/quantize.html#muLawSQ.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.quantize.muLawSQ.expand" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza la expansión de la señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – numpy.array
+Array de numpy con las muestras de la señal</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras de la señal expandidas</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-dsppy.transform">
+<span id="dsppy-transform-module"></span><h2>dsppy.transform module<a class="headerlink" href="#module-dsppy.transform" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.transform.dct">
+<span class="sig-prename descclassname"><span class="pre">dsppy.transform.</span></span><span class="sig-name descname"><span class="pre">dct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/transform.html#dct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.transform.dct" title="Link to this definition">¶</a></dt>
+<dd><p>Construye la matriz de coeficientes de la transformada de coseno discreto
+(DCT) de tamaño N x N</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> – int
+Número de filas/columnas de la matriz de tranformación</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matriz de transformación</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.transform.dft">
+<span class="sig-prename descclassname"><span class="pre">dsppy.transform.</span></span><span class="sig-name descname"><span class="pre">dft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/transform.html#dft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.transform.dft" title="Link to this definition">¶</a></dt>
+<dd><p>Construye la matriz de coeficientes de la transformada discreta de Fourier
+(DFT) de tamaño N x N</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> – int
+Número de filas/columnas de la matriz de transformación</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matriz de transformación</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.transform.dst">
+<span class="sig-prename descclassname"><span class="pre">dsppy.transform.</span></span><span class="sig-name descname"><span class="pre">dst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/transform.html#dst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.transform.dst" title="Link to this definition">¶</a></dt>
+<dd><p>Construye la matriz de coeficientes de la transformada de seno discreto
+(DST) de tamaño N x N</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> – int
+Número de filas/columnas de la matriz de transformación</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matriz de transformación</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.transform.dwht">
+<span class="sig-prename descclassname"><span class="pre">dsppy.transform.</span></span><span class="sig-name descname"><span class="pre">dwht</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/transform.html#dwht"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.transform.dwht" title="Link to this definition">¶</a></dt>
+<dd><p>Construye la matriz de coeficientes de la transformada de Walsh-Hadamard
+(DWHT) de tamaño N x N</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> – int
+Número de filas/columnas de la matriz de transformación</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matriz de transformación</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-dsppy.utils">
+<span id="dsppy-utils-module"></span><h2>dsppy.utils module<a class="headerlink" href="#module-dsppy.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.addDither">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">addDither</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#addDither"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.addDither" title="Link to this definition">¶</a></dt>
+<dd><p>Añade dither a una señal evitando el desbordamiento del tipo de datos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – numpy.array
+Señal a la que se va a añadir dither</p></li>
+<li><p><strong>dither</strong> – numpy.array
+Dither que se va a añadir a ‘x’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Señal ‘x’ con el dither añadido</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.bode">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">bode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#bode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.bode" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula y representa la respuesta en frecuencia de un sistema</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> – numpy.array
+Array con los coeficientes del numerador de la función de
+transferencia del sistema</p></li>
+<li><p><strong>a</strong> – numpy.arry, opcional (por defecto: 1)
+Array con los coeficientes del denominador de la función de
+transferencia del sistema</p></li>
+<li><p><strong>fs</strong> – int, opcional (por defecto: None)
+Frecuencia de muestreo. Se usa para determinar el rango de
+frecuencias del eje horizontal en Hz. Si es None, las frecuencias
+del eje horizonal se muestran en rad/muestra normalizados.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.composeImage">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">composeImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finalShape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#composeImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.composeImage" title="Link to this definition">¶</a></dt>
+<dd><p>Reconstruye una imagen bidimensional que previamente se ha divivido en
+bloque usando ‘partition image’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>blocks</strong> – numpy.array
+Array de tamaño AxB con los bloques de la imagen, donde A es el
+número de bloques y B es el número de píxeles en un bloque</p></li>
+<li><p><strong>step1</strong> – int
+Alto (en pixeles) de los bloques en los que se dividió ‘img’</p></li>
+<li><p><strong>step2</strong> – int
+Ancho (en pixeles) de los bloques en los que se dividió ‘img’</p></li>
+<li><p><strong>finalShape</strong> – tuple
+Tamaño de la imagen tras la reconstrucción.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con la imagen reconstruida.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.downsample">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.downsample" title="Link to this definition">¶</a></dt>
+<dd><p>Decrementa la frecienca de muestreo un factor n</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – numpy.array
+Señal unidimensional cuya frecuencia de muestreo va a ser
+decrementada.</p></li>
+<li><p><strong>n</strong> – int
+Factor de decremento de la frecuencia de muestreo.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Señal ‘s’ con la frecienca de muestreo decrementada un factor n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.filterDelay">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">filterDelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#filterDelay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.filterDelay" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula y representa el retardo de grupo de un sistema</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> – numpy.array
+Array con los coeficientes del numerador de la función de
+transferencia del sistema</p></li>
+<li><p><strong>a</strong> – numpy.arry, opcional (por defecto: 1)
+Array con los coeficientes del denominador de la función de
+transferencia del sistema</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.genDither">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">genDither</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nSamples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'float'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#genDither"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.genDither" title="Link to this definition">¶</a></dt>
+<dd><p>Genera dither con una PDF y potencia determinada</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nSamples</strong> – int
+Número de muestras que se generarán</p></li>
+<li><p><strong>q</strong> – Valor del cuanto del cuantificador para el que se va a usar el
+dither generado. Este valor determina la potencia del dither</p></li>
+<li><p><strong>pdf</strong> – {‘gaussian’, ‘rectangular’, ‘triangular’}
+PDF del dither que se va a generar</p></li>
+<li><p><strong>dtype</strong> – dtype, opcional (por defecto: float)
+Tipo de datos de las muestras del dither</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con las muestras del dither generado</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.getG722lpf">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">getG722lpf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#getG722lpf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.getG722lpf" title="Link to this definition">¶</a></dt>
+<dd><p>Devuelve los coeficientes del filtro paso-baja de análisis definido en el
+estándar G.722</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tiene</strong><strong>)</strong> (<em>(</em><em>No</em>)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con los coeficientes de la respuesta al impulso del
+filtro</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.getNumberOfBits">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">getNumberOfBits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#getNumberOfBits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.getNumberOfBits" title="Link to this definition">¶</a></dt>
+<dd><p>Aproxima el número de bits que se usaron para cuantificar una señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – numpy.array
+Senal de la que se van a determinar los bits usados en su
+cuantificación</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Número de bits aproximado (cota inferior) que se usó para
+cuantificar ‘s’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.mse">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">mse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#mse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.mse" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el error cuadrático medio (MSE) entre 2 señales</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> – numpy.array
+Primera señal</p></li>
+<li><p><strong>s2</strong> – numpy.array
+Segunda señal</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>MSE entre ‘s1’ y ‘s2’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.partitionImage">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">partitionImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#partitionImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.partitionImage" title="Link to this definition">¶</a></dt>
+<dd><p>Divide una imagen bidimensional en bloques rectangulares. Completa la
+imagen con ceros si es necesario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – numpy.array
+Imagen que se va a dividir en bloques</p></li>
+<li><p><strong>step1</strong> – int
+Alto (en pixeles) de los bloques en los que se va a dividir ‘img’</p></li>
+<li><p><strong>step2</strong> – int
+Ancho (en pixeles) de los bloques en los que se va a dividir ‘img’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array de numpy con los pixels de cada bloque en forma de vector 1D
+Tiene dimensión AxB, donde A es el número de bloques y B es el número
+de píxeles en un bloque (B=’step1’*’step2’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.psnr">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">psnr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#psnr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.psnr" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula la relación señal ruido pico (PSNR) en decibelios entre 2 señales</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> – numpy.array
+Primera señal</p></li>
+<li><p><strong>s2</strong> – numpy.array
+Segunda señal</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PSNR entre ‘s1’ y ‘s2’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.showPSD">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">showPSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#showPSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.showPSD" title="Link to this definition">¶</a></dt>
+<dd><p>Representa el espectro de densidad de potencia de una señal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – numpy.array
+Array de numpy con las muestras de la señal</p></li>
+<li><p><strong>fs</strong> – int
+Frecuencia de muestreo</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.signalRange">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">signalRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#signalRange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.signalRange" title="Link to this definition">¶</a></dt>
+<dd><p>Detemina el rango en el que varia una señal en función del tipo de dato del
+array en el que está almacenada</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – numpy.array
+Señal de la que se determinará el rango</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tupla de 2 elementos con el límite inferior y el límite superior del
+rango de la señal ‘s’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.snr">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">snr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#snr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.snr" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula la relación señal ruido (SNR) en decibelios entre 2 señales</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> – numpy.array
+Primera señal</p></li>
+<li><p><strong>s2</strong> – numpy.array
+Segunda señal</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SNR entre ‘s1’ y ‘s2’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.toDB">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">toDB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">power</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#toDB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.toDB" title="Link to this definition">¶</a></dt>
+<dd><p>Convierte un valor de potencia en decibelios</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>power</strong> – float
+Valor de potencia a convertir en decibelios</p></li>
+<li><p><strong>pref</strong> – float, opcional (por defecto: 1)
+Valor de referencia</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Valor ‘power’ en decibelios</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.upsample">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">upsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#upsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.upsample" title="Link to this definition">¶</a></dt>
+<dd><p>Aumenta la frecienca de muestreo un factor n</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – numpy.array
+Señal unidimensional cuya frecuencia de muestreo va a ser
+aumentada.</p></li>
+<li><p><strong>n</strong> – int
+Factor de aumento de la frecuencia de muestreo.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Señal ‘s’ con la frecienca de muestreo aumentada un factor n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.zigzag">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">zigzag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#zigzag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.zigzag" title="Link to this definition">¶</a></dt>
+<dd><p>Recorre un array 2D en forma de zig-zag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>m</strong> – numpy.array
+Array 2D que va a se recorrido en zig-zag</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array 1D de numpy con los elementos de m leídos en zig-zag</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dsppy.utils.zigzagIdx">
+<span class="sig-prename descclassname"><span class="pre">dsppy.utils.</span></span><span class="sig-name descname"><span class="pre">zigzagIdx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dsppy/utils.html#zigzagIdx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dsppy.utils.zigzagIdx" title="Link to this definition">¶</a></dt>
+<dd><p>Recorre un array 2D en forma de zig-zag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> – int
+Número de filas del array 2D</p></li>
+<li><p><strong>w</strong> – int
+Número de columnas del array 2D</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tupla con los índices correspondientes a recoger un array 2D
+con h filas y w columnas en zig-zag</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-dsppy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dsppy" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">API Reference</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, SiPBA Group
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">dsppy package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-dsppy.channel">dsppy.channel module</a><ul>
+<li><a class="reference internal" href="#dsppy.channel.CRCCoder"><code class="docutils literal notranslate"><span class="pre">CRCCoder</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.channel.CRCCoder.decode"><code class="docutils literal notranslate"><span class="pre">CRCCoder.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.CRCCoder.encode"><code class="docutils literal notranslate"><span class="pre">CRCCoder.encode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.CRCCoder.p"><code class="docutils literal notranslate"><span class="pre">CRCCoder.p</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.CRCCoder.register"><code class="docutils literal notranslate"><span class="pre">CRCCoder.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.channel.ConvCoder"><code class="docutils literal notranslate"><span class="pre">ConvCoder</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.channel.ConvCoder.decode"><code class="docutils literal notranslate"><span class="pre">ConvCoder.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.ConvCoder.encode"><code class="docutils literal notranslate"><span class="pre">ConvCoder.encode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.ConvCoder.plotStateDiagram"><code class="docutils literal notranslate"><span class="pre">ConvCoder.plotStateDiagram()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.channel.ConvCoder.plotTrellis"><code class="docutils literal notranslate"><span class="pre">ConvCoder.plotTrellis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.channel.canalBSC"><code class="docutils literal notranslate"><span class="pre">canalBSC()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-dsppy.code">dsppy.code module</a><ul>
+<li><a class="reference internal" href="#dsppy.code.FixedLengthCoder"><code class="docutils literal notranslate"><span class="pre">FixedLengthCoder</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.code.FixedLengthCoder.b"><code class="docutils literal notranslate"><span class="pre">FixedLengthCoder.b</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.FixedLengthCoder.decode"><code class="docutils literal notranslate"><span class="pre">FixedLengthCoder.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.FixedLengthCoder.encode"><code class="docutils literal notranslate"><span class="pre">FixedLengthCoder.encode()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder"><code class="docutils literal notranslate"><span class="pre">RunCountCoder</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.b"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.b</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.bCount"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.bCount</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.count"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.count</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.decode"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.encode"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.encode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.maxZeros"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.maxZeros</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.code.RunCountCoder.value"><code class="docutils literal notranslate"><span class="pre">RunCountCoder.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-dsppy.quantize">dsppy.quantize module</a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.ALawSQ"><code class="docutils literal notranslate"><span class="pre">ALawSQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.ALawSQ.compress"><code class="docutils literal notranslate"><span class="pre">ALawSQ.compress()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.ALawSQ.expand"><code class="docutils literal notranslate"><span class="pre">ALawSQ.expand()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.quantize.CompandedSQ"><code class="docutils literal notranslate"><span class="pre">CompandedSQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.CompandedSQ.decode"><code class="docutils literal notranslate"><span class="pre">CompandedSQ.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.CompandedSQ.encode"><code class="docutils literal notranslate"><span class="pre">CompandedSQ.encode()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalSQ"><code class="docutils literal notranslate"><span class="pre">OptimalSQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalSQ.plot"><code class="docutils literal notranslate"><span class="pre">OptimalSQ.plot()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalSQ.quantize"><code class="docutils literal notranslate"><span class="pre">OptimalSQ.quantize()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalVQ"><code class="docutils literal notranslate"><span class="pre">OptimalVQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalVQ.C"><code class="docutils literal notranslate"><span class="pre">OptimalVQ.C</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalVQ.decode"><code class="docutils literal notranslate"><span class="pre">OptimalVQ.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalVQ.encode"><code class="docutils literal notranslate"><span class="pre">OptimalVQ.encode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.OptimalVQ.quantize"><code class="docutils literal notranslate"><span class="pre">OptimalVQ.quantize()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ"><code class="docutils literal notranslate"><span class="pre">UniformSQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.C"><code class="docutils literal notranslate"><span class="pre">UniformSQ.C</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.L"><code class="docutils literal notranslate"><span class="pre">UniformSQ.L</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.decode"><code class="docutils literal notranslate"><span class="pre">UniformSQ.decode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.encode"><code class="docutils literal notranslate"><span class="pre">UniformSQ.encode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.plot"><code class="docutils literal notranslate"><span class="pre">UniformSQ.plot()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.precision"><code class="docutils literal notranslate"><span class="pre">UniformSQ.precision</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.q"><code class="docutils literal notranslate"><span class="pre">UniformSQ.q</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.quantize"><code class="docutils literal notranslate"><span class="pre">UniformSQ.quantize()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.UniformSQ.roundData"><code class="docutils literal notranslate"><span class="pre">UniformSQ.roundData()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dsppy.quantize.muLawSQ"><code class="docutils literal notranslate"><span class="pre">muLawSQ</span></code></a><ul>
+<li><a class="reference internal" href="#dsppy.quantize.muLawSQ.compress"><code class="docutils literal notranslate"><span class="pre">muLawSQ.compress()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.quantize.muLawSQ.expand"><code class="docutils literal notranslate"><span class="pre">muLawSQ.expand()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-dsppy.transform">dsppy.transform module</a><ul>
+<li><a class="reference internal" href="#dsppy.transform.dct"><code class="docutils literal notranslate"><span class="pre">dct()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.transform.dft"><code class="docutils literal notranslate"><span class="pre">dft()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.transform.dst"><code class="docutils literal notranslate"><span class="pre">dst()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.transform.dwht"><code class="docutils literal notranslate"><span class="pre">dwht()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-dsppy.utils">dsppy.utils module</a><ul>
+<li><a class="reference internal" href="#dsppy.utils.addDither"><code class="docutils literal notranslate"><span class="pre">addDither()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.bode"><code class="docutils literal notranslate"><span class="pre">bode()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.composeImage"><code class="docutils literal notranslate"><span class="pre">composeImage()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.downsample"><code class="docutils literal notranslate"><span class="pre">downsample()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.filterDelay"><code class="docutils literal notranslate"><span class="pre">filterDelay()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.genDither"><code class="docutils literal notranslate"><span class="pre">genDither()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.getG722lpf"><code class="docutils literal notranslate"><span class="pre">getG722lpf()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.getNumberOfBits"><code class="docutils literal notranslate"><span class="pre">getNumberOfBits()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.mse"><code class="docutils literal notranslate"><span class="pre">mse()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.partitionImage"><code class="docutils literal notranslate"><span class="pre">partitionImage()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.showPSD"><code class="docutils literal notranslate"><span class="pre">showPSD()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.signalRange"><code class="docutils literal notranslate"><span class="pre">signalRange()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.snr"><code class="docutils literal notranslate"><span class="pre">snr()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.toDB"><code class="docutils literal notranslate"><span class="pre">toDB()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.upsample"><code class="docutils literal notranslate"><span class="pre">upsample()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.zigzag"><code class="docutils literal notranslate"><span class="pre">zigzag()</span></code></a></li>
+<li><a class="reference internal" href="#dsppy.utils.zigzagIdx"><code class="docutils literal notranslate"><span class="pre">zigzagIdx()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-dsppy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>
